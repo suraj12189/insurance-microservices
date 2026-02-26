@@ -1,25 +1,17 @@
-package com.insurance.analytics.entity;
+package com.insurance.policy.event;
 
 import com.insurance.policy.enums.PolicyStatus;
-import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
-
-@Entity
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class PolicyAnalytics {
-
-    @Id
-    private String policyNumber;
-
-    private String customerId;
-
-    private PolicyStatus status;
+public class PolicyEvent {
 
     private String eventType;
+    private String policyNumber;
+    private String customerId;
+    private PolicyStatus status;
 }

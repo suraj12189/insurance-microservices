@@ -1,17 +1,31 @@
 package com.insurance.analytics.event;
 
-import com.insurance.analytics.enums.PolicyStatus;
 import lombok.*;
+
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class PolicyEvent {
 
-    private String eventType;
-    private String policyNumber;
+    private Long policyId;
+
     private String customerId;
-    private PolicyStatus status;
+
+    private String policyType;
+
+    private String status;
+
+    private Double premiumAmount;
+
+    private LocalDateTime createdAt;
+
+    // Optional (recommended)
+    private String eventType;
+    // POLICY_CREATED
+    // POLICY_UPDATED
+    // POLICY_CANCELLED
 }
